@@ -1,6 +1,6 @@
 #include<iostream>
 #include <conio.h>
-#include <windows.h>
+#include "ConsoleController.h"
 
 #define UP 119
 #define DOWN 115
@@ -40,8 +40,5 @@ class Avatar {
 		
 		void getBack();
 		void move(const int KEY);
-		
-		void static goTo(int xPosition , int yPosition);
-		
 		void draw();
 };

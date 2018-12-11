@@ -13,7 +13,6 @@ void Game::listenToInputKey(){
 			if(pressedKey == 224)
 				continue;
 			//after here pressedKey is usable
-			Avatar::goTo(0,0);
 			map->draw();
 			avatar->move(pressedKey);
 			avatar->draw();
@@ -23,10 +22,7 @@ void Game::listenToInputKey(){
 void Game::start(){
 	map->build();
 	map->draw();
-	Avatar::goTo(0,0);
+	ConsoleController::goTo(0,0);
 	cout << Avatar::ANDICATOR;
 	listenToInputKey();
-}
-void Game::clearScreen(){
-	system("cls");
 }

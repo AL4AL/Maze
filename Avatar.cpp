@@ -1,5 +1,6 @@
 #include "Avatar.h"
 #include "Map.h"
+
 Avatar::Avatar(int xBorder ,int yBorder){
 	x = 0;
 	y = 0;
@@ -28,10 +29,12 @@ void Avatar::move(const int KEY){
 		}
 	}
 }
+/*
 void Avatar::clearPreviousAvatar(){
-	goTo(x , y);
+	ConsoleController::goTo(x , y);
 	cout << Map::FREE;
 }
+*/
 void Avatar::moveUp(){
 	if(y != 0)
 		--y;		
@@ -49,14 +52,7 @@ void Avatar::moveRight(){
 	if(xBorder-1 != x)
 		++x;
 }
-void Avatar::goTo (int xPosition , int yPosition){
-	static HANDLE h = NULL;
-	if (!h){
-		h = GetStdHandle(STD_OUTPUT_HANDLE);
-	}
-	COORD c = {xPosition, yPosition};
-	SetConsoleCursorPosition(h, c);
-}
+
 bool Avatar::isKeyAllowed(const int KEY){
 	switch(KEY){
 		case UP:
@@ -74,7 +70,7 @@ bool Avatar::isKeyAllowed(const int KEY){
 	}
 }
 void Avatar::draw(){
-	Avatar::goTo(x, y);
+	ConsoleController::goTo(x, y);
 	cout << Avatar::ANDICATOR;
 }
 void Avatar::getBack(){

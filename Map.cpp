@@ -28,6 +28,7 @@ void Map::build(){
 	this->rows = rows;
 }
 void Map::draw(){
+	ConsoleController::goTo(0,0);
 	for (int i=0; i < height; ++i){
 		for(int j=0; j < width; j++){
 			cout << (rows[i])[j];
