@@ -1,3 +1,6 @@
+#ifndef MAP_H_INCLUDED
+#define MAP_H_INCLUDED
+
 #include <iostream>
 #include <ctime>
 #include <cstdlib>
@@ -22,3 +25,5 @@ class Map {
 		static const char WALL = '#';
 		static const char FREE = ' ';
 };
+
+#endif

@@ -1,6 +1,10 @@
+#ifndef AVATAR_H_INCLUDED
+#define AVATAR_H_INCLUDED
+
 #include<iostream>
 #include <conio.h>
 #include "ConsoleController.h"
+#include "Direction.h"
 
 #define UP 119
 #define DOWN 115
@@ -32,6 +36,8 @@ class Avatar {
 		void moveLeft();
 		void moveRight();
 		
+		void isWallAt(Direction direction);
+		
 	public:
 		static const char ANDICATOR = 'X';
 		
@@ -42,3 +48,5 @@ class Avatar {
 		void move(const int KEY);
 		void draw();
 };
+
+#endif
