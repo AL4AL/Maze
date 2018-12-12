@@ -1,15 +1,17 @@
 #ifndef AVATAR_H_INCLUDED
 #define AVATAR_H_INCLUDED
 
-#include<iostream>
+#include <iostream>
 #include <conio.h>
+#include <stdexcept>
 #include "ConsoleController.h"
 #include "Direction.h"
+#include "Map.h"
 
-#define UP 119
-#define DOWN 115
-#define LEFT 97
-#define RIGHT 100
+#define UP_W 119
+#define DOWN_S 115
+#define LEFT_A 97
+#define RIGHT_D 100
 
 #define UP_ARROW 72
 #define DOWN_ARROW 80
@@ -26,6 +28,7 @@ class Avatar {
 		int y;
 		int previousX;
 		int previousY;
+		char** map2dArray;
 	
 		bool isKeyAllowed(const int KEY);
 		
@@ -36,7 +39,7 @@ class Avatar {
 		void moveLeft();
 		void moveRight();
 		
-		void isWallAt(Direction direction);
+		bool isWallAt(Direction direction);
 		
 	public:
 		static const char ANDICATOR = 'X';
@@ -47,6 +50,7 @@ class Avatar {
 		void getBack();
 		void move(const int KEY);
 		void draw();
+		void setMap(char** map2dArray);
 };
 
 #endif

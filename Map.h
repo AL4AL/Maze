@@ -2,6 +2,7 @@
 #define MAP_H_INCLUDED
 
 #include <iostream>
+#include <stdexcept>
 #include <ctime>
 #include <cstdlib>
 #include "ConsoleController.h"
@@ -12,7 +13,8 @@ class Map {
 	private:
 		int width;
 		int height;
-		char** rows; //every row points to rows that contain columns as much as width
+		char** map2dArray; //initialize in build()
+		bool makeMap2dArray();
 	public:
 		Map();
 		~Map();
@@ -22,6 +24,7 @@ class Map {
 		int setMapHeight();
 		void build();
 		void draw();
+		char** getMap2dArray();
 		static const char WALL = '#';
 		static const char FREE = ' ';
 };

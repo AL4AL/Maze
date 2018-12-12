@@ -22,7 +22,8 @@ void Game::listenToInputKey(){
 void Game::start(){
 	map->build();
 	map->draw();
-	ConsoleController::goTo(0,0);
+	avatar->setMap(map->getMap2dArray());
+	ConsoleController::goTo(1,1);
 	cout << Avatar::ANDICATOR;
 	listenToInputKey();
 }

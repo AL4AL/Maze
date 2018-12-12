@@ -1,8 +1,8 @@
 #include "Game.h"
-
 #define WIDTH 20
 #define HEIGHT 10
 
+//  CAUTION: THIS PROJECT USES C++11
 int main(int argc, char** argv) {
 	Map *map = new Map();
 	map->setMapDimens(WIDTH,HEIGHT);
@@ -17,3 +17,4 @@ int main(int argc, char** argv) {
 	
 	return 1;
 }
+
