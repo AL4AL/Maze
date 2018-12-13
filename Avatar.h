@@ -26,19 +26,15 @@ class Avatar {
 		int yBorder;
 		int x;
 		int y;
-		int previousX;
-		int previousY;
 		char** map2dArray;
 	
 		bool isKeyAllowed(const int KEY);
-		
-		void clearPreviousAvatar();
 		
 		void moveUp();
 		void moveDown();
 		void moveLeft();
 		void moveRight();
-		
+		void winCheck();
 		bool isWallAt(Direction direction);
 		
 	public:

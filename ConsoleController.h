@@ -8,7 +8,7 @@ class ConsoleController {
 		
 	public:
 		void static goTo(int xPosition , int yPosition);
-		void clearScreen();
+		void static clearScreen();
 };
 
 #endif

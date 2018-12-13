@@ -12,8 +12,6 @@ Avatar::~Avatar(){
 }
 void Avatar::move(const int KEY){
 	if(isKeyAllowed(KEY)){
-		previousX = x;
-		previousY = y;
 		switch(KEY){
 			case UP_W:
 			case UP_ARROW: moveUp();
@@ -28,18 +26,22 @@ void Avatar::move(const int KEY){
 			case RIGHT_ARROW: moveRight();
 				break;
 		}
+		winCheck();
 	}
 }
-/*
-void Avatar::clearPreviousAvatar(){
-	ConsoleController::goTo(x , y);
-	cout << Map::FREE;
+void Avatar::winCheck(){
+	ConsoleController::goTo(25,20);
+	cout << "xBorder :" << xBorder << " and x = " << x;
+	if(x == xBorder-2 && y == yBorder-2){
+		ConsoleController::clearScreen();
+		cout << "You win!";
+		exit(1);
+	}
 }
-*/
 void Avatar::moveUp(){
 	if(y != 0)
 		if(!isWallAt(Direction::TOP))
-			--y;		
+			--y;
 }
 void Avatar::moveDown(){
 	bool condit = yBorder-1 != y;
@@ -79,10 +81,6 @@ void Avatar::draw(){
 }
 void Avatar::setMap(char** map2dArray){
 	this->map2dArray = map2dArray;
-}
-void Avatar::getBack(){
-	x = previousX;
-	y = previousY;
 }
 bool Avatar::isWallAt(Direction direction){
 	if(map2dArray != NULL){
