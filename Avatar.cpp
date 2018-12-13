@@ -27,11 +27,17 @@ void Avatar::move(const int KEY){
 				break;
 		}
 		winCheck();
+		bombCheck();
 	}
 }
 void Avatar::winCheck(){
-	ConsoleController::goTo(25,20);
-	cout << "xBorder :" << xBorder << " and x = " << x;
+	if((map2dArray[y])[x] == Map::BOMB){
+		ConsoleController::clearScreen();
+		cout << "You lose!";
+		exit(1);
+	}
+}
+void Avatar::bombCheck(){
 	if(x == xBorder-2 && y == yBorder-2){
 		ConsoleController::clearScreen();
 		cout << "You win!";
