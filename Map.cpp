@@ -29,13 +29,13 @@ void Map::build(){
 			if(x == 0 || x == width-1 || y == 0 || y == height-1){// create outside walls
 				(map2dArray[y])[x] = Map::WALL;
 			}else{////////////////////////////////////////////////// create inside of walls
-				int random = rand() % 20;
-				if(random > 10){
+				int random = rand() % 25;
+				if(random > 15){
 					(map2dArray[y])[x] = Map::WALL;
 				}else{
 					(map2dArray[y])[x] = Map::FREE;
 				}
-				if (random > 18)
+				if (random > 23)
 					(map2dArray[y])[x] = Map::BOMB;
 			}
 			

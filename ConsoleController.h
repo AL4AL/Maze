@@ -2,6 +2,7 @@
 #define CONSOLECONTROLLER_H_INCLUDED
 
 #include <windows.h>
+#include <conio.h>
 
 class ConsoleController {
 	private:
@@ -9,6 +10,7 @@ class ConsoleController {
 	public:
 		void static goTo(int xPosition , int yPosition);
 		void static clearScreen();
+		void static setCursorVisibility(bool showFlag);
 };
 
 #endif

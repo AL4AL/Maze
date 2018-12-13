@@ -31,9 +31,9 @@ class Map {
 		void draw();
 		char** getMap2dArray();
 		static const char WALL = char(219);
-		static const char BOMB = 'B';
+		static const char BOMB = '0';
 		static const char FREE = ' ';
-		static const char TARGET = 'X';
+		static const char TARGET = 'O';
 };
 
 #endif

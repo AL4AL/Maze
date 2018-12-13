@@ -36,6 +36,7 @@ class Avatar {
 		void moveRight();
 		void winCheck();
 		void bombCheck();
+		void printYouWin();
 		bool isWallAt(Direction direction);
 		
 	public:

@@ -18,6 +18,7 @@ class Game {
 	public:
 		Game(Map* map, Avatar* avatar);
 		~Game();
+		void showGuide();
 		void start();
 };
 

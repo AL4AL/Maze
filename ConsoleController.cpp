@@ -13,3 +13,10 @@ void ConsoleController::goTo (int xPosition , int yPosition){
 void ConsoleController::clearScreen(){
 	system("cls");
 }
+void ConsoleController::setCursorVisibility(bool showFlag){
+	HANDLE out = GetStdHandle(STD_OUTPUT_HANDLE);
+	CONSOLE_CURSOR_INFO cursorInfo;
+	GetConsoleCursorInfo(out, &cursorInfo);
+	cursorInfo.bVisible = showFlag;
+	SetConsoleCursorInfo(out, &cursorInfo);
+}
