@@ -11,10 +11,15 @@ using namespace std;
 
 class Map {
 	private:
+		int count;
 		int width;
 		int height;
+		int targetX;
+		int targetY;
 		char** map2dArray; //initialize in build()
+		
 		bool makeMap2dArray();
+		void openWay(int startXPositin , int startYPosition);
 	public:
 		Map();
 		~Map();
@@ -25,8 +30,9 @@ class Map {
 		void build();
 		void draw();
 		char** getMap2dArray();
-		static const char WALL = '#';
+		static const char WALL = char(219);
 		static const char FREE = ' ';
+		static const char TARGET = 'X';
 };
 
 #endif
