@@ -1,9 +1,6 @@
-/Makefile.win
-/Season6GameMaze.exe
-/main.o
-/Season6GameMaze.layout
-/Avatar.o
-/ConsoleController.o
-/Game.o
-/Map.o
-/makefile.win
+
+*.o
+*.exe
+ConsoleController.o
+Makefile.win
+Season6GameMaze.layout
